@@ -41,12 +41,12 @@
 
 	<div class="box-body">
 		<ol class="breadcrumb">
-			<li><a href="#" ng-click="grade=1;selectList({id:0});emptySelect()">顶级分类列表</a>
+			<li><a href="#" ng-click="grade=1;selectList({id:0})">顶级分类列表</a>
 			</li>
 			<li ng-if="entity_1!=null"><a href="#"
-				ng-click="grade=2;selectList(entity_1);emptySelect()">{{entity_1.name}}</a></li>
+				ng-click="setGrade(2);selectList(entity_1)">{{entity_1.name}}</a></li>
 			<li ng-if="entity_2!=null"><a href="#"
-				ng-click="grade=3;selectList(entity_2);emptySelect()">{{entity_2.name}}</a></li>
+				ng-click="setGrade(3);selectList(entity_2)">{{entity_2.name}}</a></li>
 		</ol>
 
 		<!-- 数据表格 -->
@@ -60,7 +60,7 @@
 							data-toggle="modal" data-target="#editModal" ng-click="entity={};emptySelect()">
 							<i class="fa fa-file-o"></i> 新建
 						</button>
-						<button type="button" class="btn btn-default" title="删除" ng-click="dele()">
+						<button type="button" class="btn btn-default" title="删除" ng-click="del()">
 							<i class="fa fa-trash-o"></i> 删除
 						</button>
 						<button type="button" class="btn btn-default" title="刷新"
@@ -96,7 +96,7 @@
 						<td>{{entity.typeId}}</td>
 						<td class="text-center"><span ng-if="grade!=3">
 								<button type="button" class="btn bg-olive btn-xs"
-									ng-click="setGrade(grade+1);selectList(entity);emptySelect()">查询下级</button>
+									ng-click="setGrade(grade+1);selectList(entity)">查询下级</button>
 						</span>
 							<button type="button" class="btn bg-olive btn-xs"
 								data-toggle="modal" data-target="#editModal"
@@ -143,7 +143,7 @@
 							<td>类型模板</td>
 							<td>
 								 <select select2 ng-model="entity.typeId" class="form-control" placeholder="商品类型模板">
-					                    <option value="{{ item.id }}" ng-repeat="item in typeTemplate">{{ item.text }}</option>
+					                    <option value="{{ item.id }}" ng-repeat="item in typeTemplate">{{ item.name }}</option>
                 				</select>
 							</td>
 						</tr>

@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.kgc.pinyougou.service.TypeTemplateService;
+
+import java.util.List;
+
 /**
  * controller
  * @author Administrator
@@ -22,8 +25,8 @@ public class TypeTemplateController {
 
 	@RequestMapping("findAllTypeTemplate")
 	@ResponseBody
-	public PageResult findAllTypeTemplate(Integer page, Integer size, @RequestBody TypeTemplate TypeTemplate){
-		PageResult rsult = typeTemplateService.findPageTypeTemplate(page, size, TypeTemplate);
+	public List<TypeTemplate> findAllTypeTemplate(){
+		List<TypeTemplate> rsult = typeTemplateService.findAllTypeTemplate();
 		return rsult;
 	}
 

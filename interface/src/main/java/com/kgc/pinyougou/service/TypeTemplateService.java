@@ -3,12 +3,16 @@ package com.kgc.pinyougou.service;
 import com.kgc.pinyougou.domain.TypeTemplate;
 import com.kgc.pinyougou.utils.PageResult;
 
+import java.util.List;
+
 /**
  * 服务层接口
  * @author Administrator
  *
  */
 public interface TypeTemplateService {
+
+	List<TypeTemplate> findAllTypeTemplate();
 
 	/**
 	 * @Author Admin

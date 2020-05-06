@@ -26,6 +26,7 @@ app.controller('itemCatController', function($scope, $controller,
 			itemCatService.update($scope.entity).success(function (response) {
 				if (response == 1){
 					alert("修改成功")
+                    $scope.findByParentId($scope.entity.parentId)
 				}else {
                     alert("修改失败")
 				}
@@ -35,6 +36,7 @@ app.controller('itemCatController', function($scope, $controller,
 			itemCatService.add($scope.entity).success(function (response) {
                 if (response == 1){
                     alert("增加成功")
+                    $scope.findByParentId($scope.entity.parentId)
                 }else {
                     alert("增加失败")
                 }
@@ -46,31 +48,14 @@ app.controller('itemCatController', function($scope, $controller,
 	// 批量删除
 	$scope.del = function() {
 		// 获取选中的复选框
-		itemCatService.del($scope.selectIds).success(function(response) {
-			if (response.success) {
-				if($scope.selectIds != null){
-					$scope.selectIds=[];
-				}
-				$scope.findByParentId($scope.parentId);// 重新加载
+		itemCatService.del($scope.ids).success(function(response) {
+			if (response == 1) {
+                alert("删除成功")
+                $scope.findByParentId($scope.entity.parentId)// 重新加载
 			}else{
-				alert(response.message);
-				$("#selall").prop("checked", false);
-				$(":checkbox[name = 'as']").prop("checked", false);
-				if($scope.selectIds != null){
-					$scope.selectIds=[];
-				}
+                alert("删除失败")
 			}
 		});
-	}
-
-	$scope.searchEntity = {};// 定义搜索对象
-	// 搜索
-	$scope.search = function(page, rows) {
-		itemCatService.search(page, rows, $scope.searchEntity).success(
-				function(response) {
-					$scope.list = response.rows;
-					$scope.paginationConf.totalItems = response.total;// 更新总记录数
-				});
 	}
 
 	// 查询时记录上级ID
@@ -116,7 +101,7 @@ app.controller('itemCatController', function($scope, $controller,
 	// 模板选项
 	$scope.typeTemplate = {};
 	$scope.selectOptionList = function(){
-		typeTemplateService.selectOptionList().success(
+        typeTemplateService.findAllTypeTemplate().success(
 			function(response){
 				$scope.typeTemplate = response;
 		});

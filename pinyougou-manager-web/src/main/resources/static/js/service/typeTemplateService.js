@@ -21,4 +21,9 @@ app.service('typeTemplateService',function($http){
         return $http.post("../typeTemplate/updateTypeTemplate",entity)
     }
 
+    //所有模板
+    this.findAllTypeTemplate=function () {
+        return $http.get("../typeTemplate/findAllTypeTemplate")
+    }
+
 });

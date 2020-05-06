@@ -1,8 +1,8 @@
 //服务层
 app.service('itemCatService',function($http){
 
-    this.findAllItemCat=function (searchEntity) {
-        return $http.post("../itemCat/findAllItemCat,searchEntity")
+    this.findAllItemCat=function (entity) {
+        return $http.post("../itemCat/findAllItemCat,entity")
     }
 
     this.findByParentId=function (id) {
@@ -17,11 +17,11 @@ app.service('itemCatService',function($http){
         return $http.post("../itemCat/delItemCat",ids)
     }
 
-    this.add=function (searchEntity) {
-        return $http.post("../itemCat/addItemCat",searchEntity)
+    this.add=function (entity) {
+        return $http.post("../itemCat/addItemCat",entity)
     }
 
-    this.update=function (searchEntity) {
-        return $http.post("../itemCat/updateItemCat",searchEntity)
+    this.update=function (entity) {
+        return $http.post("../itemCat/updateItemCat",entity)
     }
 });

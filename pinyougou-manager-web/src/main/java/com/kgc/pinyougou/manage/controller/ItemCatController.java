@@ -54,7 +54,7 @@ public class ItemCatController {
 		return itemCatService.findOne(id);
 	}
 
-	@RequestMapping("updateBrand")
+	@RequestMapping("updateItemCat")
 	@ResponseBody
 	public Integer updateItemCat(@RequestBody ItemCat itemCat){
 		try{

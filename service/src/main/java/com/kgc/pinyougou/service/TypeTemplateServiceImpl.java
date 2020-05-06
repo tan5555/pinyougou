@@ -10,6 +10,8 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  * 服务实现层
  * @author Administrator
@@ -19,8 +21,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class TypeTemplateServiceImpl implements TypeTemplateService {
 
-	@Autowired
+	@Autowired(required = false)
 	private TypeTemplateMapper typeTemplateMapper;
+
+	@Override
+	public List<TypeTemplate> findAllTypeTemplate() {
+		return typeTemplateMapper.selectByExample(null);
+	}
 
 	@Override
 	public PageResult findPageTypeTemplate(Integer pageNum, Integer pageSize, TypeTemplate typeTemplate) {
