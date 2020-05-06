@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="dao" />
+        <module name="demo_security" />
+        <module name="entity" />
+        <module name="interface" />
+        <module name="pinyougou" />
+        <module name="pinyougou-common" />
+        <module name="pinyougou-manager-web" />
+        <module name="pinyougou-page-web" />
+        <module name="pinyougou-portal-web" />
+        <module name="pinyougou-shop-web" />
+        <module name="pinyougou-user-web" />
+        <module name="pinyougou.dao" />
+        <module name="pinyougou.interface" />
+        <module name="pinyugou.entity" />
+        <module name="service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="dao" target="1.5" />
+      <module name="demo_security" target="1.8" />
+      <module name="entity" target="1.5" />
+      <module name="interface" target="1.5" />
+      <module name="manage-web" target="1.8" />
+      <module name="pinyougou" target="1.8" />
+      <module name="pinyougou-common" target="1.8" />
+      <module name="pinyougou-manager-web" target="1.8" />
+      <module name="pinyougou-page-web" target="1.8" />
+      <module name="pinyougou-portal-web" target="1.8" />
+      <module name="pinyougou-search-web" target="1.8" />
+      <module name="pinyougou-shop-web" target="1.8" />
+      <module name="pinyougou-user-web" target="1.8" />
+      <module name="pinyougou.dao" target="1.5" />
+      <module name="pinyougou.interface" target="1.5" />
+      <module name="pinyugou.entity" target="1.5" />
+      <module name="service" target="1.8" />
+      <module name="web" target="1.8" />
+      <module name="web (1)" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
