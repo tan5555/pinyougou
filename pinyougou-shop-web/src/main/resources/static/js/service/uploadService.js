@@ -4,7 +4,7 @@ app.service("uploadService", function($http) {
 		formData.append("pfile", file.files[0]);
 		return $http({
 			method : 'POST',
-			url : "/seller/upload",
+			url : "/goods/upload",
 			data : formData,
 			/*
 			 * anjularjs对于post和get请求默认的Content-Type header
